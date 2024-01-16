@@ -1,11 +1,39 @@
 import React from 'react'
 import Img from '../images/hero-desktop.jpg'
-
+import Logo from '../images/logo.svg'
+import Arrow from '../images/icon-arrow.svg'
 function App() {
 	return (
 		<div className="w-full h-screen flex justify-center items-center bg-custom bg-cover bg-no-repeat bg-left">
-			<div className='w-full max-w-[1440px] max-h-[800px] h-full m-auto flex'>
-				<div className="w-3/5 py-[3.4rem] px-[8rem] flex flex-col justify-center items-center">
+			<div className='w-full max-w-[1440px] h-full max-h-[800px] m-auto grid grid-cols-custom-grid-column grid-rows-custom-grid-row'>
+				<header className='col-[2_/_3] row-[2_/_3]'>
+					<figure>
+						<img src={Logo} alt="" />
+					</figure>
+				</header>
+
+				{/* IMAGE CONTAINER */}
+				<aside className='bg-hero col-[4_/_5] row-[1_/_-1] bg-cover bg-center bg-no-repeat'>
+				</aside>
+				<section className='w-[350px] col-[2_/_3] row-[4_/_5] text-[4rem] leading-[4.295rem] tracking-[1.1rem]'>
+					<h1 className='uppercase'>
+						<span className='text-desatured-red font-light tracking-[1.15rem]'>we're</span>
+						<p className='font-semibold'>coming soon</p>
+					</h1>
+				</section>
+				<div className='max-w-[440px] leading-[1.75rem] text-desatured-red col-[2_/_3] row-[6_/_7]'>
+					<p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+				</div>
+				<form id='form' action="" className='w-[445px] col-[2] row-[8] relative'>
+					<input type="text" placeholder='Email address'
+						className='bg-transparent w-[445px] h-[56px] pl-[2rem] pr-[9rem] rounded-full 
+						border border-desatured-red/40 focus:outline-2
+					focus:outline-desatured-red/90 focus:-outline-offset-2 placeholder:text-desatured-red' />
+					<button type="submit" className='w-[100px] h-[56px] pl-[2px] pt-[3px] absolute right-0 bottom-1 flex justify-center items-center border-none rounded-full bg-gradient-135 shadow-lg !shadow-desatured-red/50'>
+						<img src={Arrow} alt="" />
+					</button>
+				</form>
+				{/* <div className="w-3/5 py-[3.4rem] px-[8rem] flex flex-col justify-center items-center">
 					<div className="mb-[3rem] lg:ml-[3.2rem] self-start">
 						<svg xmlns="http://www.w3.org/2000/svg" width="158" height="33">
 							<defs>
@@ -38,7 +66,7 @@ function App() {
 				</div>
 				<div className="w-2/5">
 					<img src={Img} alt="" className='w-full h-full object-contain' />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	)
